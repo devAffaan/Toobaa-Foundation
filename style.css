@@ -7,8 +7,12 @@
 body{
     background-color: #f5f5f5;
     color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 .navbar{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -31,6 +35,10 @@ body{
     font-size: 18px;
     margin-left: 80px;
 }
+.ul1 li:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
 .s1{
     background-color: #f5f0e6;
     color: black;
@@ -45,12 +53,13 @@ body{
     font-size:20px;
     margin-bottom: 10px;
 }
-.s1 input{
+.s1 input {
     padding: 10px 20px;
-    border: none;
     border-radius: 8px;
     margin-top: 20px;
     border: 1px solid black;
+    width: auto;
+    font-size: 16px;
 }
 .s1 button{
     padding: 10px 20px;
@@ -59,9 +68,15 @@ body{
     cursor: pointer;
     border: 1px solid black;
 }
+button:hover{
+    background-color: #0d1b2a;
+    color: white;
+    transition: 0.3s;
+}
 .s2{
     text-align: center;
     padding: 50px 20px;
+    color: black;
 }
 .s2 a{
     text-decoration: none;
@@ -112,7 +127,9 @@ body{
     background-color: #0d1b2a;
     color: white;
     text-align: center;
-    padding: 40px 20px;    
+    padding: 40px 20px; 
+    margin-bottom: 0;  
+    display: block; 
 }
 .footer p{
     margin-bottom: 5px;
@@ -142,3 +159,203 @@ body{
         grid-template-columns: repeat(2,1fr);
     }
 }
+@media (max-width: 500px){
+    .navbar li{
+        display: none;
+    }
+}
+.aboutSection{
+    padding: 60px 80px;
+    text-align: left;
+    max-width: 700px;
+    font-size: 18px;
+    color: black;
+    line-height: 1.5;
+}
+.aboutSection h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.aboutSection p{
+    margin-bottom: 24px;
+}
+.hamburger i{
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+}
+.hamburger{
+    display: none;
+}
+@media (max-width: 500px) {
+    .ul1 {
+        display: none;
+        flex-direction: column;
+        background-color: #0d1b2a;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        gap: 5px;
+        z-index: 999;
+        text-align: left;
+    }
+
+    .ul1.open {
+        display: flex;
+    }
+
+    .ul1 li {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 0.5px solid rgba(255,255,255,0.1);
+    }
+
+    .ul1 li:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar li {
+        display: block;
+    }
+}
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+@media (max-width: 500px) {
+    .aboutSection {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .s1, .s2, .s3 {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+.contactSection{
+    width: 80%;
+    margin: 50px auto;
+    color: black;
+    font-size: 18px;
+}
+.contactBox{
+    display: flex;
+    background: white;
+}
+.contactLeft{
+    flex-basis: 60%;
+    padding: 40px 60px;
+    color: black;
+}
+.contactRight{
+    flex-basis: 40%;
+    padding: 40px;
+    background-color: #0d1b2a;
+    color: white;
+}
+h1{
+    margin-bottom: 10px;
+}
+.contactSection p{
+    margin-bottom: 40px;
+}
+.inputRow{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.inputGroup{
+    flex-basis: 45%;
+}
+input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc ;
+    outline: none;
+    padding: 5px;
+}
+textarea{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+label{
+    margin-bottom: 8px;
+    display: block;
+}
+.contactButton{
+    background:#0d1b2a;
+    color: white;
+    outline: none;
+    height: 35px;
+    border-radius: 30px;
+    width: 100px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+.contactButton:hover{
+    background-color: #1e3a5f;
+    color: white;
+    transition: 0.3s;
+}
+.contactLeft h3{
+    color: #0d1b2a;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.contactLeft h3{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+tr td:first-child {
+    padding-right: 20px;
+}
+tr td{
+    padding-top: 20px;
+}
+input, textarea {
+    font-size: 16px;
+}
+.contactLeft input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.contactLeft textarea {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+@media (max-width: 500px){
+    .contactBox{
+        flex-direction: column;
+    }
+    .inputRow{
+        flex-direction: column;
+    }
+    .inputGroup{
+        margin-bottom: 15px;
+    }
+    .contactRight{
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+}
+
+
+
