@@ -171,6 +171,7 @@ button:hover{
     font-size: 18px;
     color: black;
     line-height: 1.5;
+    margin-bottom: 130px;
 }
 .aboutSection h1{
     font-size: 40px;
@@ -385,6 +386,51 @@ input, textarea {
         width: auto;
     }
 }
+.errorSection{
+    margin-left: 25px;
+    margin-bottom: 260px;
+}
+.errorNumber{
+    font-size: 100px;
+    font-weight: bold;
+    color: black;
+}
+.text{
+    font-size: 24px;
+    color: black;
+}
+.page{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    line-height: 50px;   
+}
+.page:hover{
+    text-decoration: underline;
+    text-decoration-line: black;
+}
+@media (max-width: 500px){
+    .errorSection{
+        margin-bottom: 280px;
+    }
+    .errorNumber{
+        font-size: 60px;
+    }
+    .text{
+        font-size: 20px;
+    }
+    .page{
+        font-size: 18px;
+    }
+    .footer2{
+        margin-bottom: 280px;
+    }
+    .aboutSection{
+        margin-bottom: 200px;
+    }
+    
+}
+
 
 
 
