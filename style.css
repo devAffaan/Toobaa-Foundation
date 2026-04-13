@@ -150,7 +150,7 @@ button:hover{
     padding: 10px 20px;
 }
 @media (max-width: 900px){
-    .boosdiv{
+    .booksdiv{
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -354,6 +354,35 @@ input, textarea {
     .contactRight{
         border-radius: 20px;
         margin-top: 20px;
+    }
+}
+@media (max-width: 500px){
+    .s1 input{
+        width: 85%;
+        display: block;
+        margin: 20px auto 10px auto;
+    }
+    .s1 button{
+        display: block;
+        margin: 0 auto;
+    }
+    .bookstypes{
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 10px;
+    }
+    tr td{
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 180px;
+        font-size: 14px;
+    }
+        tr td:first-child {
+        width: 80px;
+        min-width: 80px;
+    }
+    tr td:last-child {
+        width: auto;
     }
 }
 
