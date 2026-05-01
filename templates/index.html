@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toobaa Foundation</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tooba Foundation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <nav class="navbar">
         <h1>Tooba Foundation</h1>
         <ul class="ul1" id="navMenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger" spellcheck="false">
              <i class="fa-solid fa-bars"></i>
@@ -40,97 +38,97 @@
         <h2 class="fh2">Books</h2>
         <div class="booksdiv">
             <div class="bookcard">
-            <img src="images/Afkar.png">
+            <img src="{{ url_for('static', filename='images/afkar-e-habeeb.png') }}">
             <h3 class="fh3">Afkar-E-Habeeb</h3>
             <p class="author">Author: Muhammad Habeeb Amrat</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/Arzu.png">
+            <img src="{{ url_for('static', filename='images/Arzu.png') }}">
             <h3 class="fh3">Aarzuu-e-Mohabbat. آرزوئے محبت</h3>
             <p class="author">Author: Fazal Shaik</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/abqat.png">
+            <img src="{{ url_for('static', filename='images/abqat.png') }}">
             <h3 class="fh3">Abaqat | عبقات</h3>
             <p class="author">Author: Ismail Dehlvi</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/chakwal.jpg">
+            <img src="{{ url_for('static', filename='images/chakwal.jpg') }}">
             <h3 class="fh3">Tareekh e Chakwal</h3>
             <p class="author">Author: Liaqat Ali Khan Niazi</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/jehlum.png">
+            <img src="{{ url_for('static', filename='images/jehlum.png') }}">
             <h3 class="fh3">Aaina-jhelum. آئینہ جہلم</h3>
             <p class="author">Author: Maqbool Hussain Bhatti</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/kahuta.png">
+            <img src="{{ url_for('static', filename='images/kahuta.png') }}">
             <h3 class="fh3">Dastan-e-Kahuta. داستان کہوٹہ</h3>
             <p class="author">Author: Wali Muhammad</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/pothwar.png">
+            <img src="{{ url_for('static', filename='images/pothwar.png') }}">
             <h3 class="fh3">Pothwar. پوٹھوہار </h3>
             <p class="author">Author: Aziz Malik</p>
             <a href="book.html?id=1">View Book</a>
             </div>
             <div class="bookcard">
-            <img src="images/rohtas.png">
+            <img src="{{ url_for('static', filename='images/rohtas.png') }}">
             <h3 class="fh3">Tareekh-e-rohtas o Halaat e Qila. تاریخ روہتاس و حالات قلعہ</h3>
             <p class="author">Author: Muneer Muhammad Safder Hussain</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/aabshar.jpg">
+            <img src="{{ url_for('static', filename='images/aabshar.jpg') }}">
             <h3 class="fh3">Aabshaar. آبشار</h3>
             <p class="author">Author: Muzamar Tatari</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/adhkoray.png">
+            <img src="{{ url_for('static', filename='images/adhkoray.png') }}">
             <h3 class="fh3">adkhora. اڈکھوڑے</h3>
             <p class="author">Author: Mirza Ghafor Ilahi</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/daboos.png">
+            <img src="{{ url_for('static', filename='images/daboos.png') }}">
             <h3 class="fh3">daboos al muqallideen. دبوس المقلدین  </h3>
             <p class="author">Author: Muhammad Badar ud din</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/rajputTareekh.png" >
+            <img src="{{ url_for('static', filename='images/rajputTareekh.png') }}" >
             <h3 class="fh3">rajput tareekh ke aaine mein. راجپوت تاریخ کے آئینے میں</h3>
             <p class="author">Author: Ghulam Akbar Malik</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/funyoga.png">
+            <img src="{{ url_for('static', filename='images/funyoga.png') }}">
             <h3 class="fh3">fun e yoga telepathy. فنِ یوگا ٹیلی پیتھی حصہ سوم</h3>
             <p class="author">Author: Fateh Ali Khan</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/alamgiri.png">
+            <img src="{{ url_for('static', filename='images/alamgiri.png') }}">
             <h3 class="fh3">Ruqa‘āt-e-Alamgiri | رقعاتِ عالمگیری</h3>
             <p class="author">Author: </p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/lootain.jpg">
+            <img src="{{ url_for('static', filename='images/lootain.jpg') }}">
             <h3 class="fh3">Aao Pakistan Lootain | آؤ پاکستان لوٹیں</h3>
             <p class="author">Author: Ashraf Sharif</p>
             <a href="book.html?id=1">View Book</a>
             </div>
               <div class="bookcard">
-            <img src="images/ayaam.png">
+            <img src="{{ url_for('static', filename='images/ayaam.png') }}">
             <h3 class="fh3">Aaina-e-Ayyam | آئینہ ایّام</h3>
             <p class="author">Author:  Professor Hafiz Abdul Razzaq</p>
             <a href="book.html?id=1">View Book</a>
@@ -149,5 +147,7 @@ Our mission is simple: Save the stories that time tried to erase.</p>
     </div>
     <p>&copy; 2025 Toobaa Foundation. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </body>
 </html>

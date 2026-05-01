@@ -20,6 +20,7 @@ body{
     background-color: #0d1b2a;
     color: white;
     padding: 20px 20px;  
+    text-align: center;
 }
 .navbar a{
     color: white;
@@ -128,11 +129,11 @@ button:hover{
     color: white;
     text-align: center;
     padding: 40px 20px; 
-    margin-bottom: 0;  
+    margin-bottom: 0px;  
     display: block; 
 }
 .footer p{
-    margin-bottom: 5px;
+    margin-bottom: 28px;
 }
 .icons{
     display: flex;
