@@ -13,7 +13,9 @@ async function loadBooks() {
     if (books.length === 0) {
         tableBody.innerHTML = `
             <tr>
-                <td colspan="6" class="no-books">No books found!</td>
+                <td colspan="6" class="no-books">
+                    No books found. Add your first book!
+                </td>
             </tr>
         `;
         return;
@@ -33,7 +35,8 @@ async function loadBooks() {
                 <td>${book.author}</td>
                 <td>${book.category}</td>
                 <td>
-                    <button class="delete-btn" onclick="deleteBook(${book.id})">
+                    <button class="delete-btn" 
+                            onclick="deleteBook(${book.id})">
                         Delete
                     </button>
                 </td>
@@ -44,27 +47,47 @@ async function loadBooks() {
     tableBody.innerHTML = rows;
 }
 
+
 async function addBook() {
     const title       = document.getElementById('title').value;
     const author      = document.getElementById('author').value;
     const category    = document.getElementById('category').value;
-    const cover_image = document.getElementById('cover_image').value;
-    const pdf_path    = document.getElementById('pdf_path').value;
     const description = document.getElementById('description').value;
+    const coverFile   = document.getElementById('cover_image').files[0];
+    const pdfFile     = document.getElementById('pdf_path').files[0];
 
     if (!title || !author || !category) {
         alert('Please fill title, author and category!');
         return;
     }
 
+   
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('author', author);
+    formData.append('category', category);
+    formData.append('description', description);
+
+    if (coverFile) {
+        formData.append('cover_image', coverFile);
+    }
+    if (pdfFile) {
+        formData.append('pdf_path', pdfFile);
+    }
+
+
+    const addBtn = document.getElementById('addBookBtn');
+    addBtn.textContent = 'Adding...';
+    addBtn.disabled = true;
+
     const response = await fetch('/api/admin/books', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            title, author, category,
-            cover_image, pdf_path, description
-        })
+        body: formData
+        
     });
+
+    addBtn.textContent = 'Add Book';
+    addBtn.disabled = false;
 
     if (response.ok) {
         const modal = bootstrap.Modal.getInstance(
@@ -72,17 +95,31 @@ async function addBook() {
         );
         modal.hide();
 
-        // clear form fields
         document.getElementById('title').value = '';
         document.getElementById('author').value = '';
         document.getElementById('category').value = '';
+        document.getElementById('description').value = '';
         document.getElementById('cover_image').value = '';
         document.getElementById('pdf_path').value = '';
-        document.getElementById('description').value = '';
+
 
         loadBooks();
     } else {
-        alert('Error adding book!');
+        const data = await response.json();
+        alert(data.message || 'Error adding book!');
+    }
+}
+
+
+function previewImage(input) {
+    const preview = document.getElementById('imagePreview');
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        }
+        reader.readAsDataURL(input.files[0]);
     }
 }
 

@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from database import db
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
+from flask_bcrypt import Bcrypt
+from flask import render_template, redirect, url_for, session
 import os
 
 load_dotenv()
@@ -18,6 +20,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 db.init_app(app)
+
+bcrypt = Bcrypt(app)
 
 from routes.books import books_bp
 from routes.contact import contact_bp
@@ -53,6 +57,8 @@ def admin_login_page():
 
 @app.route('/admin/dashboard')
 def admin_dashboard_page():
+    if not session.get('admin'):
+        return redirect(url_for('admin_login_page'))
     return render_template('admin/dashboard.html')
 
 
